@@ -1,0 +1,88 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[left=3.7cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[toc,page]{appendix}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[acronym,nomain,nonumberlist]{glossaries}
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\usepackage{tabularx,ragged2e,booktabs,caption}
+
+\author{R. M. D. D. C. Ranasinghe}
+
+\linespread{1.25}
+\renewcommand\bibname{References}
+\graphicspath{ {images/} }
+
+\begin{document}
+
+\pagenumbering{roman}
+
+\include{chapters/title}
+\include{chapters/declaration}
+\include{chapters/abstract}
+\include{chapters/acknowledgement}
+\tableofcontents
+\addcontentsline{toc}{chapter}{Contents}
+\clearpage
+
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+\addcontentsline{toc}{chapter}{List of Acronyms}
+\include{chapters/acronyms}
+
+\setcounter{chapter}{0} 
+\pagenumbering{arabic}
+
+\include{chapters/Introduction}
+\clearpage
+\include{chapters/literature_review}
+\clearpage
+\include{chapters/design}
+\clearpage
+\include{chapters/implementation}
+\clearpage
+\include{chapters/results_and_evaluation}
+\clearpage
+\include{chapters/conclusion}
+\clearpage
+
+\addcontentsline{toc}{chapter}{References}
+
+\bibliography{references.bib} 
+\bibliographystyle{ieeetr}
+
+\include{chapters/apendix}
+\end{document}
